@@ -13,6 +13,7 @@ import AudioToolbox
 class ViewController: UIViewController {
     
     // MARK: - Properties
+    
     //second commit
     let questionsPerRound = 4
     var questionsAsked = 0
@@ -31,8 +32,10 @@ class ViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var questionField: UILabel!
-    @IBOutlet weak var trueButton: UIButton!
-    @IBOutlet weak var falseButton: UIButton!
+    @IBOutlet weak var answer1: UIButton!
+    @IBOutlet weak var answer2: UIButton!
+    @IBOutlet weak var answer3: UIButton!
+    @IBOutlet weak var answer4: UIButton!
     @IBOutlet weak var playAgainButton: UIButton!
 
     override func viewDidLoad() {
@@ -96,6 +99,11 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Actions
+    
+    //populate the views
+    func updateViews(){
+        
+    }
     
     @IBAction func checkAnswer(_ sender: UIButton) {
         // Increment the questions asked counter

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B9537B822E286D3000CA152 /* Trivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9537B722E286D3000CA152 /* Trivia.swift */; };
+		1B9537BB22E28A85000CA152 /* TriviaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9537BA22E28A85000CA152 /* TriviaController.swift */; };
 		972A72B12056F06C0059EF4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972A72B02056F06C0059EF4A /* AppDelegate.swift */; };
 		972A72B32056F06C0059EF4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972A72B22056F06C0059EF4A /* ViewController.swift */; };
 		972A72B62056F06C0059EF4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 972A72B42056F06C0059EF4A /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B9537B722E286D3000CA152 /* Trivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trivia.swift; sourceTree = "<group>"; };
+		1B9537BA22E28A85000CA152 /* TriviaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaController.swift; sourceTree = "<group>"; };
 		972A72AD2056F06C0059EF4A /* EnhanceQuizStarter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnhanceQuizStarter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		972A72B02056F06C0059EF4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		972A72B22056F06C0059EF4A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +41,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B9537B422E2868C000CA152 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1B9537B722E286D3000CA152 /* Trivia.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1B9537B922E28A75000CA152 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1B9537BA22E28A85000CA152 /* TriviaController.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
 		972A72A42056F06C0059EF4A = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +76,8 @@
 		972A72AF2056F06C0059EF4A /* EnhanceQuizStarter */ = {
 			isa = PBXGroup;
 			children = (
+				1B9537B922E28A75000CA152 /* Model Controller */,
+				1B9537B422E2868C000CA152 /* Model */,
 				972A72B02056F06C0059EF4A /* AppDelegate.swift */,
 				972A72B22056F06C0059EF4A /* ViewController.swift */,
 				972A72B42056F06C0059EF4A /* Main.storyboard */,
@@ -140,7 +162,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B9537BB22E28A85000CA152 /* TriviaController.swift in Sources */,
 				972A72B32056F06C0059EF4A /* ViewController.swift in Sources */,
+				1B9537B822E286D3000CA152 /* Trivia.swift in Sources */,
 				972A72B12056F06C0059EF4A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,7 +303,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R9E84DX62H;
+				DEVELOPMENT_TEAM = X4W7EQ4E4R;
 				INFOPLIST_FILE = EnhanceQuizStarter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teamtreehouse.EnhanceQuizStarter;
@@ -294,7 +318,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R9E84DX62H;
+				DEVELOPMENT_TEAM = X4W7EQ4E4R;
 				INFOPLIST_FILE = EnhanceQuizStarter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teamtreehouse.EnhanceQuizStarter;
