@@ -72,7 +72,7 @@
                                     <constraint firstAttribute="height" constant="258" id="xqD-sV-7uH"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sample Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCF-BL-dDa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sample Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCF-BL-dDa">
                                 <rect key="frame" x="37" y="20" width="300" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="m7M-co-z5l"/>
@@ -82,7 +82,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correction Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1h-Ju-sJa">
-                                <rect key="frame" x="46" y="78" width="300" height="50"/>
+                                <rect key="frame" x="37" y="78" width="300" height="50"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -93,8 +93,8 @@
                             <constraint firstItem="dCF-BL-dDa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3px-b6-vFT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cVs-BP-oWf" secondAttribute="trailing" constant="16" id="9Ol-RP-PjO"/>
                             <constraint firstItem="dCF-BL-dDa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="BJM-FS-4O0"/>
-                            <constraint firstItem="c1h-Ju-sJa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="CCd-ix-3I3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c1h-Ju-sJa" secondAttribute="trailing" constant="29" id="PgU-7e-9Qo"/>
+                            <constraint firstItem="c1h-Ju-sJa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="CCd-ix-3I3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c1h-Ju-sJa" secondAttribute="trailing" constant="38" id="PgU-7e-9Qo"/>
                             <constraint firstItem="dCF-BL-dDa" firstAttribute="centerX" secondItem="cVs-BP-oWf" secondAttribute="centerX" id="Qyy-di-ofA"/>
                             <constraint firstItem="c1h-Ju-sJa" firstAttribute="top" secondItem="dCF-BL-dDa" secondAttribute="bottom" constant="8" symbolic="YES" id="Vt5-06-x7C"/>
                             <constraint firstItem="cVs-BP-oWf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="XCb-Su-tME"/>

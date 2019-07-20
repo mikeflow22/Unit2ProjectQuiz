@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     var indexOfSelectedQuestion = 0
     
     var gameSound: SystemSoundID = 0
-    
+    var removedArray = [Trivia]()
     let trivia: [[String : String]] = [
         ["Question": "Only female koalas can whistle", "Answer": "False"],
         ["Question": "Blue whales are technically whales", "Answer": "True"],
@@ -61,6 +61,7 @@ class ViewController: UIViewController {
     }
     
     func displayQuestion() {
+        
         indexOfSelectedQuestion = GKRandomSource.sharedRandom().nextInt(upperBound: triviaController.questions.count)
 //        let questionDictionary = trivia[indexOfSelectedQuestion]
         let questionArray = triviaController.questions[indexOfSelectedQuestion]
@@ -72,6 +73,12 @@ class ViewController: UIViewController {
         answer3.setTitle(questionArray.choices[2], for: .normal)
         answer4.setTitle(questionArray.choices[3], for: .normal)
         playAgainButton.isHidden = true
+        correctionLabel.isHidden = true
+        
+        print("questions before getting rid of one: \(triviaController.questions.count)")
+//        triviaController.questions.remove(at: indexOfSelectedQuestion)
+////        indexOfSelectedQuestion = triviaController.questions.count
+//        print("questions.count \(triviaController.questions.count)")
     }
     
     func displayScore() {
@@ -79,12 +86,14 @@ class ViewController: UIViewController {
       
         // Display play again button
         playAgainButton.isHidden = false
-        
-        questionField.text = "Way to go!\nYou got \(correctQuestions) out of \(triviaController.questions.count) correct!"
+        correctionLabel.isHidden = true
+        questionField.text = "Way to go!\nYou got \(correctQuestions) out of \(removedArray.count) correct!"
     }
     
     func nextRound() {
-        if questionsAsked == triviaController.questions.count {
+      
+        if triviaController.questions.count == 0 {
+            print("Questions Asked: \(questionsAsked) vs questions.count: \(removedArray.count)")
             // Game is over
             displayScore()
         } else {
@@ -117,11 +126,21 @@ class ViewController: UIViewController {
         
         if (sender.tag == correctAnswer) {
             correctQuestions += 1
-            questionField.text = "Correct!"
+//            questionField.text = "Correct!"
+            correctionLabel.isHidden = false
+            correctionLabel.text = "Correct!"
         } else {
-            questionField.text = "Sorry, wrong answer!"
+//            questionField.text = "Sorry, wrong answer!"
+             correctionLabel.isHidden = false
+            correctionLabel.text = "Sorry, wrong answer!!"
         }
         
+        let remove = triviaController.questions.remove(at: indexOfSelectedQuestion)
+        removedArray.append(remove)
+        print("removedArray: \(removedArray.count)")
+        indexOfSelectedQuestion = triviaController.questions.count
+        print("questions.count \(triviaController.questions.count)")
+
         loadNextRound(delay: 2)
     }
     

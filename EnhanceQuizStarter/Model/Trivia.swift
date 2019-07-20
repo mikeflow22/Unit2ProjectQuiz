@@ -10,7 +10,13 @@ import Foundation
 
 
 struct Trivia {
-    let question: String
+    var question: String
     let choices: [String]
     let answer: Int
+    
+//    init(question: String, chocies: [String], answer: Int){
+//        self.question = question
+//        self.choices = chocies
+//        self.answer = answer
+//    }
 }

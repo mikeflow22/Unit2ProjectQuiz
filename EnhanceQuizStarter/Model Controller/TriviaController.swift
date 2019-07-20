@@ -28,7 +28,7 @@ class TriviaController {
         Trivia(question: "Which city is the oldest?", choices: ["Mexico City", "Cape Town", "San Juan", "Sydney"], answer: 1),
         Trivia(question: "Which country was the first to allow women to vote in national elections?", choices: ["Poland", "United States", "Sweden", "Senegal"], answer: 1),
         Trivia(question: "Which of these countries wont the most medals in the 2012 Summer Games?", choices: ["France", "Germany", "Japan", "Great Britian"], answer: 4),
-//        Trivia(question: <#T##String#>, choices: <#T##[String]#>, answer: <#T##String#>),
+        Trivia(question: "Which of these countries won the most medals in the 2012 Summer Games?", choices: ["France", "Germany", "Japan", "Great Britain"], answer: 4),
 //        Trivia(question: <#T##String#>, choices: <#T##[String]#>, answer: <#T##String#>),
         ]
     }
