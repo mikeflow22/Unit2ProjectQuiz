@@ -13,6 +13,7 @@ import AudioToolbox
 class ViewController: UIViewController {
     
     // MARK: - Properties
+    let triviaController = TriviaController()
     
     //second commit
     let questionsPerRound = 4
@@ -59,9 +60,11 @@ class ViewController: UIViewController {
     }
     
     func displayQuestion() {
-        indexOfSelectedQuestion = GKRandomSource.sharedRandom().nextInt(upperBound: trivia.count)
-        let questionDictionary = trivia[indexOfSelectedQuestion]
-        questionField.text = questionDictionary["Question"]
+        indexOfSelectedQuestion = GKRandomSource.sharedRandom().nextInt(upperBound: triviaController.questions.count)
+//        let questionDictionary = trivia[indexOfSelectedQuestion]
+        let questionArray = triviaController.questions[indexOfSelectedQuestion]
+//        questionField.text = questionDictionary["Question"]
+        questionField.text = questionArray.question
         playAgainButton.isHidden = true
     }
     
@@ -73,11 +76,11 @@ class ViewController: UIViewController {
         // Display play again button
         playAgainButton.isHidden = false
         
-        questionField.text = "Way to go!\nYou got \(correctQuestions) out of \(questionsPerRound) correct!"
+        questionField.text = "Way to go!\nYou got \(correctQuestions) out of \(triviaController.questions.count) correct!"
     }
     
     func nextRound() {
-        if questionsAsked == questionsPerRound {
+        if questionsAsked == triviaController.questions.count {
             // Game is over
             displayScore()
         } else {
@@ -101,18 +104,27 @@ class ViewController: UIViewController {
     // MARK: - Actions
     
     //populate the views
-    func updateViews(){
-        
-    }
+//    func updateViews(){
+//        var questionCounter = 0
+//        for question in triviaController.questions {
+//            self.questionField.text = question.question
+//            self.answer1.setTitle(question.choices[0], for: .normal)
+//            self.answer1.setTitle(question.choices[1], for: .normal)
+//            self.answer1.setTitle(question.choices[2], for: .normal)
+//            self.answer1.setTitle(question.choices[3], for: .normal)
+//        }
+//    }
     
     @IBAction func checkAnswer(_ sender: UIButton) {
         // Increment the questions asked counter
         questionsAsked += 1
         
-        let selectedQuestionDict = trivia[indexOfSelectedQuestion]
-        let correctAnswer = selectedQuestionDict["Answer"]
+//        let selectedQuestionDict = trivia[indexOfSelectedQuestion]
+//        let correctAnswer = selectedQuestionDict["Answer"]
+        let selectedQuestionsArray = triviaController.questions[indexOfSelectedQuestion]
+        let correctAnswer = selectedQuestionsArray.answer
         
-        if (sender === trueButton &&  correctAnswer == "True") || (sender === falseButton && correctAnswer == "False") {
+        if (sender.tag == correctAnswer) {
             correctQuestions += 1
             questionField.text = "Correct!"
         } else {
