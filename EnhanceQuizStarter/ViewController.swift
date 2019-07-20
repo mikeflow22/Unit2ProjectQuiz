@@ -88,6 +88,7 @@ class ViewController: UIViewController {
         playAgainButton.isHidden = false
         correctionLabel.isHidden = true
         questionField.text = "Way to go!\nYou got \(correctQuestions) out of \(removedArray.count) correct!"
+        gameOverAlert()
     }
     
     func nextRound() {
@@ -96,6 +97,9 @@ class ViewController: UIViewController {
             print("Questions Asked: \(questionsAsked) vs questions.count: \(removedArray.count)")
             // Game is over
             displayScore()
+            
+//            playAgainButton.setTitle("Play Again", for: .normal)
+            
         } else {
             // Continue game
             displayQuestion()
@@ -132,26 +136,52 @@ class ViewController: UIViewController {
         } else {
 //            questionField.text = "Sorry, wrong answer!"
              correctionLabel.isHidden = false
-            correctionLabel.text = "Sorry, wrong answer!!"
+            correctionLabel.text = "Sorry, That's not it."
         }
         
-        let remove = triviaController.questions.remove(at: indexOfSelectedQuestion)
-        removedArray.append(remove)
-        print("removedArray: \(removedArray.count)")
-        indexOfSelectedQuestion = triviaController.questions.count
-        print("questions.count \(triviaController.questions.count)")
+        
+        playAgainButton.setTitle("Next Question", for: .normal)
+        playAgainButton.isHidden = false
 
-        loadNextRound(delay: 2)
     }
     
     
     @IBAction func playAgain(_ sender: UIButton) {
         // Show the answer buttons
-     
+
+        if triviaController.questions.count == 0 {
+            nextRound()
+//            gameOverAlert()
+
+        } else  {
+            playAgainButton.isHidden = false
+            let remove = triviaController.questions.remove(at: indexOfSelectedQuestion)
+            removedArray.append(remove)
+            print("removedArray: \(removedArray.count)")
+            indexOfSelectedQuestion = triviaController.questions.count
+            print("questions.count \(triviaController.questions.count)")
+            loadNextRound(delay: 1)
+        }
         
-        questionsAsked = 0
-        correctQuestions = 0
-        nextRound()
+    }
+    
+    func gameOverAlert(){
+        let alert = UIAlertController(title: "Game Over", message: "Would you like to play again?", preferredStyle: .alert)
+        
+        let playAgainAction = UIAlertAction(title: "Play Again", style: .default) { (_) in
+            self.questionsAsked = 0
+            self.correctQuestions = 0
+            self.triviaController.questions = self.removedArray
+            self.removedArray.removeAll()
+            self.displayQuestion()
+        }
+        
+        let quitAction = UIAlertAction(title: "Quit", style: .destructive) { (_) in
+        }
+        
+        alert.addAction(playAgainAction)
+        alert.addAction(quitAction)
+        present(alert, animated: true, completion: nil)
     }
     
 
