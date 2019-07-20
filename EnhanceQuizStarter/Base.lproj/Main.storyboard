@@ -18,16 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCF-BL-dDa">
-                                <rect key="frame" x="37" y="90" width="300" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="IHP-Jd-VaQ"/>
-                                    <constraint firstAttribute="height" constant="50" id="U6g-Nc-3Su"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="cVs-BP-oWf">
                                 <rect key="frame" x="16" y="160" width="343" height="258"/>
                                 <subviews>
@@ -82,15 +72,34 @@
                                     <constraint firstAttribute="height" constant="258" id="xqD-sV-7uH"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sample Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCF-BL-dDa">
+                                <rect key="frame" x="37" y="20" width="300" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="m7M-co-z5l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correction Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1h-Ju-sJa">
+                                <rect key="frame" x="46" y="78" width="300" height="50"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.031372549020000001" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="dCF-BL-dDa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3px-b6-vFT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cVs-BP-oWf" secondAttribute="trailing" constant="16" id="9Ol-RP-PjO"/>
-                            <constraint firstItem="dCF-BL-dDa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="G8J-ad-RFN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dCF-BL-dDa" secondAttribute="trailing" constant="38" id="Woz-vo-06A"/>
+                            <constraint firstItem="dCF-BL-dDa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="BJM-FS-4O0"/>
+                            <constraint firstItem="c1h-Ju-sJa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="CCd-ix-3I3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c1h-Ju-sJa" secondAttribute="trailing" constant="29" id="PgU-7e-9Qo"/>
+                            <constraint firstItem="dCF-BL-dDa" firstAttribute="centerX" secondItem="cVs-BP-oWf" secondAttribute="centerX" id="Qyy-di-ofA"/>
+                            <constraint firstItem="c1h-Ju-sJa" firstAttribute="top" secondItem="dCF-BL-dDa" secondAttribute="bottom" constant="8" symbolic="YES" id="Vt5-06-x7C"/>
                             <constraint firstItem="cVs-BP-oWf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="XCb-Su-tME"/>
-                            <constraint firstItem="cVs-BP-oWf" firstAttribute="top" secondItem="dCF-BL-dDa" secondAttribute="bottom" constant="20" id="YNG-s2-y7w"/>
-                            <constraint firstItem="dCF-BL-dDa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p2g-fq-Dga"/>
+                            <constraint firstItem="cVs-BP-oWf" firstAttribute="top" secondItem="c1h-Ju-sJa" secondAttribute="bottom" constant="32" id="lsa-3w-p2z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cVs-BP-oWf" secondAttribute="bottom" constant="249" id="xi4-Lv-glk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -99,6 +108,7 @@
                         <outlet property="answer2" destination="qYh-2d-v8I" id="q9c-AU-Unm"/>
                         <outlet property="answer3" destination="el3-Pq-CGs" id="Rud-Vb-CKF"/>
                         <outlet property="answer4" destination="1cD-XD-jFu" id="ccJ-hU-0ly"/>
+                        <outlet property="correctionLabel" destination="c1h-Ju-sJa" id="Yhw-lg-qmT"/>
                         <outlet property="playAgainButton" destination="H6k-gq-uc1" id="lUm-H6-7wi"/>
                         <outlet property="questionField" destination="dCF-BL-dDa" id="HIQ-UX-KNe"/>
                     </connections>

@@ -38,7 +38,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var answer3: UIButton!
     @IBOutlet weak var answer4: UIButton!
     @IBOutlet weak var playAgainButton: UIButton!
-
+    @IBOutlet weak var correctionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,14 +66,17 @@ class ViewController: UIViewController {
         let questionArray = triviaController.questions[indexOfSelectedQuestion]
 //        questionField.text = questionDictionary["Question"]
         questionField.text = questionArray.question
+        
+        answer1.setTitle(questionArray.choices[0], for: .normal)
+        answer2.setTitle(questionArray.choices[1], for: .normal)
+        answer3.setTitle(questionArray.choices[2], for: .normal)
+        answer4.setTitle(questionArray.choices[3], for: .normal)
         playAgainButton.isHidden = true
     }
     
     func displayScore() {
         // Hide the answer uttons
-        trueButton.isHidden = true
-        falseButton.isHidden = true
-        
+      
         // Display play again button
         playAgainButton.isHidden = false
         
@@ -102,19 +106,6 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Actions
-    
-    //populate the views
-//    func updateViews(){
-//        var questionCounter = 0
-//        for question in triviaController.questions {
-//            self.questionField.text = question.question
-//            self.answer1.setTitle(question.choices[0], for: .normal)
-//            self.answer1.setTitle(question.choices[1], for: .normal)
-//            self.answer1.setTitle(question.choices[2], for: .normal)
-//            self.answer1.setTitle(question.choices[3], for: .normal)
-//        }
-//    }
-    
     @IBAction func checkAnswer(_ sender: UIButton) {
         // Increment the questions asked counter
         questionsAsked += 1
@@ -137,8 +128,7 @@ class ViewController: UIViewController {
     
     @IBAction func playAgain(_ sender: UIButton) {
         // Show the answer buttons
-        trueButton.isHidden = false
-        falseButton.isHidden = false
+     
         
         questionsAsked = 0
         correctQuestions = 0
