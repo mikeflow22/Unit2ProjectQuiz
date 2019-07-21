@@ -35,26 +35,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        roundCorners()
         triviaController.addQuestions()
-        loadGameStartSound()
-        playGameStartSound()
+        triviaController.loadGameStartSound()
+        triviaController.playGameStartSound()
         displayQuestion()
     }
     
-    // MARK: - Helpers
-    
-    func loadGameStartSound() {
-        let path = Bundle.main.path(forResource: "GameSound", ofType: "wav")
-        let soundUrl = URL(fileURLWithPath: path!)
-        AudioServicesCreateSystemSoundID(soundUrl as CFURL, &gameSound)
-    }
-    
-    func playGameStartSound() {
-        AudioServicesPlaySystemSound(gameSound)
-    }
+    // MARK: - DisplayFunctions
     
     func displayQuestion() {
+        
         indexOfSelectedQuestion = GKRandomSource.sharedRandom().nextInt(upperBound: triviaController.questions.count)
+        
         let questionArray = triviaController.questions[indexOfSelectedQuestion]
         questionField.text = questionArray.question
         answer1.setTitle(questionArray.choices[0], for: .normal)
@@ -134,6 +127,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //MARK: - Alert
     func gameOverAlert(){
         let alert = UIAlertController(title: "Game Over", message: "Would you like to play again?", preferredStyle: .alert)
         
@@ -142,15 +136,41 @@ class ViewController: UIViewController {
             self.correctQuestions = 0
             self.triviaController.questions = self.removedArray
             self.removedArray.removeAll()
+            self.enableButtons()
             self.displayQuestion()
         }
         
         let quitAction = UIAlertAction(title: "Quit", style: .destructive) { (_) in
+            self.disableButtons()
         }
         
         alert.addAction(playAgainAction)
         alert.addAction(quitAction)
         present(alert, animated: true, completion: nil)
+    }
+    
+    
+    //MARK: Helper funcs
+    func disableButtons(){
+        self.answer1.isEnabled = false
+        self.answer2.isEnabled = false
+        self.answer3.isEnabled = false
+        self.answer4.isEnabled = false
+    }
+    
+    func enableButtons(){
+        self.answer1.isEnabled = true
+        self.answer2.isEnabled = true
+        self.answer3.isEnabled = true
+        self.answer4.isEnabled = true
+    }
+    
+    func roundCorners(){
+        answer1.layer.cornerRadius = 10
+        answer2.layer.cornerRadius = 10
+        answer3.layer.cornerRadius = 10
+        answer4.layer.cornerRadius = 10
+        playAgainButton.layer.cornerRadius = 10
     }
 }
 
