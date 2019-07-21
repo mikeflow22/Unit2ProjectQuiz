@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     // MARK: - Properties
     let triviaController = TriviaController()
     
-    //second commit
     let questionsPerRound = 4
     var questionsAsked = 0
     var correctQuestions = 0
@@ -36,7 +35,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        triviaController.addQuestions()
         loadGameStartSound()
         playGameStartSound()
         displayQuestion()
@@ -102,8 +101,8 @@ class ViewController: UIViewController {
     @IBAction func checkAnswer(_ sender: UIButton) {
         // Increment the questions asked counter
         questionsAsked += 1
-        let selectedQuestionsArray = triviaController.questions[indexOfSelectedQuestion]
-        let correctAnswer = selectedQuestionsArray.answer
+        
+        let correctAnswer = triviaController.checkAnswer(from: triviaController.questions[indexOfSelectedQuestion])
         
         if (sender.tag == correctAnswer) {
             correctQuestions += 1

@@ -7,14 +7,19 @@
 //
 
 import Foundation
-
+import GameKit
+import AudioToolbox
 
 class TriviaController {
     var questions = [Trivia]()
+    var removedArray = [Trivia]()
     
-    init(){
-        addQuestions()
-    }
+    let questionsPerRound = 4
+    var questionsAsked = 0
+    var correctQuestions = 0
+    var indexOfSelectedQuestion = 0
+    
+    var gameSound: SystemSoundID = 0
     
     func addQuestions(){
         questions += [
@@ -30,4 +35,22 @@ class TriviaController {
         Trivia(question: "Which of these countries wont the most medals in the 2012 Summer Games?", choices: ["France", "Germany", "Japan", "Great Britian"], answer: 4),
         ]
     }
+    
+    
+    //helper functions
+   
+    func loadGameStartSound() {
+        let path = Bundle.main.path(forResource: "GameSound", ofType: "wav")
+        let soundUrl = URL(fileURLWithPath: path!)
+        AudioServicesCreateSystemSoundID(soundUrl as CFURL, &gameSound)
+    }
+    
+    func playGameStartSound() {
+        AudioServicesPlaySystemSound(gameSound)
+    }
+    
+    func checkAnswer(from question: Trivia) -> Int {
+        return question.answer
+    }
+    
 }

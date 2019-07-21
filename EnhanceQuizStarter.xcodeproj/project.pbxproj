@@ -57,6 +57,34 @@
 			path = "Model Controller";
 			sourceTree = "<group>";
 		};
+		1B9537DF22E51B28000CA152 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				972A72B42056F06C0059EF4A /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		1B9537E022E51B35000CA152 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				972A72B22056F06C0059EF4A /* ViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		1B9537E122E51B56000CA152 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				972A72B02056F06C0059EF4A /* AppDelegate.swift */,
+				972A72B72056F06C0059EF4A /* Assets.xcassets */,
+				972A72B92056F06C0059EF4A /* LaunchScreen.storyboard */,
+				972A72BC2056F06C0059EF4A /* Info.plist */,
+				972A72C22056F0E40059EF4A /* GameSound.wav */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		972A72A42056F06C0059EF4A = {
 			isa = PBXGroup;
 			children = (
@@ -78,13 +106,9 @@
 			children = (
 				1B9537B922E28A75000CA152 /* Model Controller */,
 				1B9537B422E2868C000CA152 /* Model */,
-				972A72B02056F06C0059EF4A /* AppDelegate.swift */,
-				972A72B22056F06C0059EF4A /* ViewController.swift */,
-				972A72B42056F06C0059EF4A /* Main.storyboard */,
-				972A72B72056F06C0059EF4A /* Assets.xcassets */,
-				972A72B92056F06C0059EF4A /* LaunchScreen.storyboard */,
-				972A72BC2056F06C0059EF4A /* Info.plist */,
-				972A72C22056F0E40059EF4A /* GameSound.wav */,
+				1B9537E022E51B35000CA152 /* View Controller */,
+				1B9537DF22E51B28000CA152 /* Storyboard */,
+				1B9537E122E51B56000CA152 /* Resources */,
 			);
 			path = EnhanceQuizStarter;
 			sourceTree = "<group>";
@@ -304,7 +328,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4W7EQ4E4R;
-				INFOPLIST_FILE = EnhanceQuizStarter/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/EnhanceQuizStarter/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teamtreehouse.EnhanceQuizStarter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -319,7 +343,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4W7EQ4E4R;
-				INFOPLIST_FILE = EnhanceQuizStarter/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/EnhanceQuizStarter/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teamtreehouse.EnhanceQuizStarter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
